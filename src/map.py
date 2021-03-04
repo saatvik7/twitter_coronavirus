@@ -317,7 +317,9 @@ with zipfile.ZipFile(args.input_path) as archive:
                 for hashtag in hashtags:
                     lang = tweet['lang']
                     place = tweet['place']
+		    # Set default country code to "ZZ"
                     country_code = "ZZ"
+		    # If the place dictionary is not null, then get the country code.	 
                     if (place != None):
                         country_code = place['country_code']
                     # if there is no code then set it to ZZ which means
